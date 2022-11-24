@@ -1,6 +1,8 @@
 # MathEnJeans
 `Projet Math En Jeans du Lycée de l'Albanais - Rumilly.`
 
+![image](https://user-images.githubusercontent.com/93400818/203819786-66db86db-cb24-4ada-a410-ac9110d35ce5.png)
+
 **Thème: Cryptographie.**
 
 Échange sur Internet (codes et cryptographie)
