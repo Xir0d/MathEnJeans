@@ -1,27 +1,28 @@
-#Définition de la place des lettres dans l'alphabet
-letter_a = 1
-letter_b = 2
-letter_c = 3
-letter_d = 4
-letter_e = 5
-letter_f = 6
-letter_g = 7
-letter_h = 8
-letter_i = 9
-letter_j = 10
-letter_k = 11
-letter_l = 12
-letter_m = 13
-letter_n = 14
-letter_o = 15
-letter_p = 16
-letter_q = 17
-letter_r = 18
-letter_s = 19
-letter_t = 20
-letter_u = 21
-letter_v = 22
-letter_w = 23
-letter_x = 24
-letter_y = 25
-letter_z = 26
+#Définition du décalage à éxécuter (pour chaque lettre) en fonction de la clé privée
+
+
+
+
+#Définition de l'Alphabet
+def listAlphabet():
+  return list(string.ascii_lowercase)
+print(listAlphabet())
+
+
+#Récupération du décalage de chaque lettre de la clé privée
+def private_key():
+  return list(string.ascii_lowercase)
+
+
+#Demande du message à chiffrer avec la clé privée
+message_a_chiffrer = input("Écrivez le message à chiffrer: ")
+
+
+
+#Récupération du décalage de chaque lettre de la clé privée
+def private_key(int):
+  return list(string.ascii_lowercase)
+print(private_key(int))
+
+a = ord('')
+print(a)
