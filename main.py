@@ -1,7 +1,5 @@
 import string
 from collections import Counter
-from tkinter import *
-from tkinter.messagebox import showinfo
 
 
 #Importation de la clé privée de codage
@@ -80,20 +78,33 @@ key_chain_export = open('keychain.txt', 'w')
 key_chain_export = key_chain_export.write(key_chain)
 
 #Décalage des lettres selon la liste établie précedemment
-message_chiffre = 0
-file = open('keychain.txt')
-lines = file.readlines()
-while message_chiffre >= message_length:
-    for line in lines:
-        print(line.strips())
-        print('test') #Voir si il est possible de faire des choses dans une boucle et si non comment en extraire les informatinoscomme des variables
 
-#Fermeture du fichier
-file.close()
-#Message final chiffre
-message_chiffre = 1
+def caesarize_letter(letter, shift):            
+    if 'A' <= letter.upper() <= 'Z':
+        start = ord('a') if letter.islower() else ord('A')
+        return chr((ord(letter) - start + shift) % 26 + start)
+    else:
+        return letter
+
+def caesarize(text, shift):
+    return ''.join([caesarize_letter(letter, shift) for letter in text])
+
+def uncaesarize(text, shift):
+    return ''.join([caesarize_letter(letter, -1 * shift) for letter in text])
+
+message_chiffre = str('')    
+i = 0
+for element in message_a_chiffrer:
+  with open("keychain.txt") as f:
+    data = f.readlines()[i]
+    message_chiffre = str(message_chiffre) + (caesarize(element, int(data)))
+    i = i + 1
+
+#Affichage du Message final une fois chiffré et recomposé en ligne
+print('Voici le message  chiffré: ', message_chiffre)
 #Envoie du résultat (message chiffré) dans une infoBox
-message_chiffre = showinfo('Message chiffré avec succès:', message_chiffre)
+
+#message_chiffre = showinfo('Message chiffré avec succès:', message_chiffre)
 
 #SOLUTION: Au lieu d'utiliser une fonction, directement remplacer les a par 1 et b par 2, etc...
 #OBJECTIF: FAIRE SORTIR LA VARIABLE LIGNE 42 DE LA FONCTION POUR POUVOIR L'UTILISER en utilisant return
