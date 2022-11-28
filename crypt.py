@@ -23,29 +23,16 @@ message_a_chiffrer = input("Écrivez le message à chiffrer: ")
 
 
 def count_letters(msg):
-    return len(msg) - msg.count(' ')
+    return len(msg)
 
 msg = message_a_chiffrer
 key_repeat = int(count_letters(msg) / key_count) + 1
 message_length = int(count_letters(msg))
+print(message_length)
 
 #Définition de la liste de décalage à éxécuter (pour chaque lettre) en fonction de la clé privée, ex: abcabcabcabcabcabc
 
 key_chain = private_key * key_repeat
-
-#Convertion de la liste de décalage (en lettres) vers une liste de décalage en chiffres ex: 123123123123123
-
-NUM = 31
-
-#def positions(str):
-    #for i in str:
-        #print((ord(i) & NUM), end ="")
-        #test = 1
-        #return test
-
-
-#str = key_chain
-# position str n'est rien il renvoie a none
 
 #Envoi de la liste de décalage en chiffre dans un fichier txt et remplacement des a par 1, b par 2, etc ...
 key_chain = key_chain.replace('A', '1\n')
@@ -102,14 +89,5 @@ for element in message_a_chiffrer:
 
 #Affichage du Message final une fois chiffré et recomposé en ligne
 print('Voici le message  chiffré: ', message_chiffre)
-#Envoie du résultat (message chiffré) dans une infoBox
-
-#message_chiffre = showinfo('Message chiffré avec succès:', message_chiffre)
-
-#SOLUTION: Au lieu d'utiliser une fonction, directement remplacer les a par 1 et b par 2, etc...
-#OBJECTIF: FAIRE SORTIR LA VARIABLE LIGNE 42 DE LA FONCTION POUR POUVOIR L'UTILISER en utilisant return
-
-#PLAN C: remplacer la clé directement en chiffre/avoir une clé prédéfinis
-#PLAN B: utiliser le code d'aikoo
 
 
