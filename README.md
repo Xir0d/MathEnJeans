@@ -2,6 +2,7 @@
 `Projet Math En Jeans du Lycée de l'Albanais - Rumilly.`
 
 ![image](https://user-images.githubusercontent.com/93400818/203819786-66db86db-cb24-4ada-a410-ac9110d35ce5.png)
+![mathEnJeans drawio](https://user-images.githubusercontent.com/93400818/204379076-3314a955-4309-46e7-a7a8-431e37159d6d.png)
 
 **Thème: Cryptographie.**
 
