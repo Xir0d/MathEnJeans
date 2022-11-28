@@ -1,6 +1,6 @@
 import string
 from collections import Counter
-import replace
+
 
 #Importation de la clé privée de codage
 private_key = open('clé privé.key')
@@ -36,24 +36,51 @@ key_chain = private_key * key_repeat
 #Convertion de la liste de décalage (en lettres) vers une liste de décalage en chiffres ex: 123123123123123
 
 NUM = 31
-  
-def positions(str):
-    for i in str:
-        print((ord(i) & NUM), end ="")
-        test = 1
-        return test
 
-  
-str = key_chain
+#def positions(str):
+    #for i in str:
+        #print((ord(i) & NUM), end ="")
+        #test = 1
+        #return test
+
+
+#str = key_chain
 # position str n'est rien il renvoie a none
 
-#Envoi de la liste de décalage en chiffre dans un fichier txt
-
-print(test)
+#Envoi de la liste de décalage en chiffre dans un fichier txt et remplacement des a par 1, b par 2, etc ...
+key_chain = key_chain.replace('A', '1 ')
+key_chain = key_chain.replace('B', '2 ')
+key_chain = key_chain.replace('C', '3 ')
+key_chain = key_chain.replace('D', '4 ')
+key_chain = key_chain.replace('E', '5 ')
+key_chain = key_chain.replace('F', '6 ')
+key_chain = key_chain.replace('G', '7 ')
+key_chain = key_chain.replace('H', '8 ')
+key_chain = key_chain.replace('I', '9 ')
+key_chain = key_chain.replace('J', '10 ')
+key_chain = key_chain.replace('K', '11 ')
+key_chain = key_chain.replace('L', '12 ')
+key_chain = key_chain.replace('M', '13 ')
+key_chain = key_chain.replace('N', '14 ')
+key_chain = key_chain.replace('O', '15 ')
+key_chain = key_chain.replace('P', '16 ')
+key_chain = key_chain.replace('Q', '17 ')
+key_chain = key_chain.replace('R', '18 ')
+key_chain = key_chain.replace('S', '19 ')
+key_chain = key_chain.replace('T', '20 ')
+key_chain = key_chain.replace('U', '21 ')
+key_chain = key_chain.replace('V', '22 ')
+key_chain = key_chain.replace('W', '23 ')
+key_chain = key_chain.replace('X', '24 ')
+key_chain = key_chain.replace('Y', '25 ')
+key_chain = key_chain.replace('Z', '26 ')
+key_chain_export = open('keychain.txt', 'w')
+key_chain_export = key_chain_export.write(key_chain)
 
 #SOLUTION: Au lieu d'utiliser une fonction, directement remplacer les a par 1 et b par 2, etc...
 #OBJECTIF: FAIRE SORTIR LA VARIABLE LIGNE 42 DE LA FONCTION POUR POUVOIR L'UTILISER en utilisant return
 
-#PLAN B: utiliser le code d'aikoo
 #PLAN C: remplacer la clé directement en chiffre/avoir une clé prédéfinis
+#PLAN B: utiliser le code d'aikoo
+
 
