@@ -28,7 +28,6 @@ def count_letters(msg):
 msg = message_a_chiffrer
 key_repeat = int(count_letters(msg) / key_count) + 1
 message_length = int(count_letters(msg))
-print(message_length)
 
 #Définition de la liste de décalage à éxécuter (pour chaque lettre) en fonction de la clé privée, ex: abcabcabcabcabcabc
 
