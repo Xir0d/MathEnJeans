@@ -1,5 +1,7 @@
 import string
 from collections import Counter
+from tkinter import *
+from tkinter.messagebox import showinfo
 
 
 #Importation de la clé privée de codage
@@ -27,7 +29,7 @@ def count_letters(msg):
 
 msg = message_a_chiffrer
 key_repeat = int(count_letters(msg) / key_count) + 1
-
+message_length = int(count_letters(msg))
 
 #Définition de la liste de décalage à éxécuter (pour chaque lettre) en fonction de la clé privée, ex: abcabcabcabcabcabc
 
@@ -48,34 +50,50 @@ NUM = 31
 # position str n'est rien il renvoie a none
 
 #Envoi de la liste de décalage en chiffre dans un fichier txt et remplacement des a par 1, b par 2, etc ...
-key_chain = key_chain.replace('A', '1 ')
-key_chain = key_chain.replace('B', '2 ')
-key_chain = key_chain.replace('C', '3 ')
-key_chain = key_chain.replace('D', '4 ')
-key_chain = key_chain.replace('E', '5 ')
-key_chain = key_chain.replace('F', '6 ')
-key_chain = key_chain.replace('G', '7 ')
-key_chain = key_chain.replace('H', '8 ')
-key_chain = key_chain.replace('I', '9 ')
-key_chain = key_chain.replace('J', '10 ')
-key_chain = key_chain.replace('K', '11 ')
-key_chain = key_chain.replace('L', '12 ')
-key_chain = key_chain.replace('M', '13 ')
-key_chain = key_chain.replace('N', '14 ')
-key_chain = key_chain.replace('O', '15 ')
-key_chain = key_chain.replace('P', '16 ')
-key_chain = key_chain.replace('Q', '17 ')
-key_chain = key_chain.replace('R', '18 ')
-key_chain = key_chain.replace('S', '19 ')
-key_chain = key_chain.replace('T', '20 ')
-key_chain = key_chain.replace('U', '21 ')
-key_chain = key_chain.replace('V', '22 ')
-key_chain = key_chain.replace('W', '23 ')
-key_chain = key_chain.replace('X', '24 ')
-key_chain = key_chain.replace('Y', '25 ')
-key_chain = key_chain.replace('Z', '26 ')
+key_chain = key_chain.replace('A', '1\n')
+key_chain = key_chain.replace('B', '2\n')
+key_chain = key_chain.replace('C', '3\n')
+key_chain = key_chain.replace('D', '4\n')
+key_chain = key_chain.replace('E', '5\n')
+key_chain = key_chain.replace('F', '6\n')
+key_chain = key_chain.replace('G', '7\n')
+key_chain = key_chain.replace('H', '8\n')
+key_chain = key_chain.replace('I', '9\n')
+key_chain = key_chain.replace('J', '10\n')
+key_chain = key_chain.replace('K', '11\n')
+key_chain = key_chain.replace('L', '12\n')
+key_chain = key_chain.replace('M', '13\n')
+key_chain = key_chain.replace('N', '14\n')
+key_chain = key_chain.replace('O', '15\n')
+key_chain = key_chain.replace('P', '16\n')
+key_chain = key_chain.replace('Q', '17\n')
+key_chain = key_chain.replace('R', '18\n')
+key_chain = key_chain.replace('S', '19\n')
+key_chain = key_chain.replace('T', '20\n')
+key_chain = key_chain.replace('U', '21\n')
+key_chain = key_chain.replace('V', '22\n')
+key_chain = key_chain.replace('W', '23\n')
+key_chain = key_chain.replace('X', '24\n')
+key_chain = key_chain.replace('Y', '25\n')
+key_chain = key_chain.replace('Z', '26\n')
 key_chain_export = open('keychain.txt', 'w')
 key_chain_export = key_chain_export.write(key_chain)
+
+#Décalage des lettres selon la liste établie précedemment
+message_chiffre = 0
+file = open('keychain.txt')
+lines = file.readlines()
+while message_chiffre >= message_length:
+    for line in lines:
+        print(line.strips())
+        print('test') #Voir si il est possible de faire des choses dans une boucle et si non comment en extraire les informatinoscomme des variables
+
+#Fermeture du fichier
+file.close()
+#Message final chiffre
+message_chiffre = 1
+#Envoie du résultat (message chiffré) dans une infoBox
+message_chiffre = showinfo('Message chiffré avec succès:', message_chiffre)
 
 #SOLUTION: Au lieu d'utiliser une fonction, directement remplacer les a par 1 et b par 2, etc...
 #OBJECTIF: FAIRE SORTIR LA VARIABLE LIGNE 42 DE LA FONCTION POUR POUVOIR L'UTILISER en utilisant return
