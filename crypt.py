@@ -1,7 +1,6 @@
 import string
 from collections import Counter
 
-
 #Importation de la clé privée de codage
 private_key = open('clé privé.key')
 private_key = private_key.read()
@@ -78,7 +77,7 @@ def caesarize(text, shift):
 def uncaesarize(text, shift):
     return ''.join([caesarize_letter(letter, -1 * shift) for letter in text])
 
-message_chiffre = str('')    
+message_chiffre = ''
 i = 0
 for element in message_a_chiffrer:
   with open("keychain.txt") as f:
@@ -88,5 +87,5 @@ for element in message_a_chiffrer:
 
 #Affichage du Message final une fois chiffré et recomposé en ligne
 print('Voici le message  chiffré: ', message_chiffre)
-
-
+message_chiffre_export = open('message chiffre.txt', 'w')
+message_chiffre_export = message_chiffre_export.write(message_chiffre)
