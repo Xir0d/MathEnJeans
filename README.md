@@ -24,3 +24,14 @@ Votre mission, si vous l’acceptez, est de transmettre un message ultra confide
 ➢ corriger les erreurs qui peuvent apparaître dans un message
 
 ➢ l’idée est de travailler sur la cryptographie et les codes correcteurs d’erreurs
+
+Objectif: faire un code pour potentiellement detecter une erreur dans un message transmis et potentiellement corriger l'erreur.
+    Piste: QRcode: meme en effeçant la moitié, il marche.
+
+Solution: envoyer plusieurs fois le message pour eviter et detecter des potentielles erreurs.
+
+Piste: envoies des packets entres pc.
+
+Calculer la probabilité que notre cryptage façe une erreur
+
+Trouver la longueur optimale de la clée publique pour optimiser
