@@ -85,5 +85,9 @@ for element in message_a_chiffrer:
     message_chiffre = str(message_chiffre) + (caesarize(element, int(data)))
     i = i + 1
 
+#Ajout du chiffre permettant de sécuriser l'authenticité du message:
+longueur_message_chiffre = str(len(message_chiffre))
+message_chiffre = message_chiffre + '-' + longueur_message_chiffre
+
 #Affichage du Message final une fois chiffré et recomposé en ligne
 print('\033[0mVoici le message chiffré: ', '\033[93m', message_chiffre, '\033[0m')
