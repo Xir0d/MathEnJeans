@@ -14,7 +14,7 @@ key_length = private_key
 key_count = int(count_letters(key_length))
 
 #Demande du message à chiffrer avec la clé privée
-message_a_chiffrer = input("Écrivez le message à chiffrer: ")
+message_a_chiffrer = input("\033[92mÉcrivez le message à chiffrer: ")
 
 #Récupération du nombre de lettres à chiffrer dans le message pour définir le nombre de fois que nous avons besoin de la clé de chiffrement privée
 # (+) Division du nombre de caractère par la longueur de la clé de chiffrement privée
@@ -86,6 +86,6 @@ for element in message_a_chiffrer:
     i = i + 1
 
 #Affichage du Message final une fois chiffré et recomposé en ligne
-print('Voici le message  chiffré: ', message_chiffre)
+print('\033[0mVoici le message chiffré: ', '\033[93m', message_chiffre, '\033[0m')
 message_chiffre_export = open('message chiffre.txt', 'w')
 message_chiffre_export = message_chiffre_export.write(message_chiffre)
