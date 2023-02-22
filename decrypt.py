@@ -1,12 +1,11 @@
 import string
 
-message_chiffre_import = open('message chiffre.txt', 'r')
-message_chiffre = message_chiffre_import.readlines()
+message_chiffre = input('Message à décoder: ')
 
 
 #Décalage des lettres selon la liste établie précedemment
 
-def caesarize_letter(letter, shift):            
+def caesarize_letter(letter, shift):
     if 'A' <= letter.upper() <= 'Z':
         start = ord('a') if letter.islower() else ord('A')
         return chr((ord(letter) - start + shift) % 26 + start)
@@ -21,16 +20,11 @@ def uncaesarize(text, shift):
 
 message_dechiffre = ''
 i = 0
-
 for element in message_chiffre:
   with open("keychain.txt") as f:
     data = f.readlines()[i]
-    data = int(data)
+    data =  int(data)
     data = -data
-    message_dechiffre = message_dechiffre + (caesarize(element, int(data)))
+    message_dechiffre = str(message_dechiffre) + (caesarize(element, data))
     i = i + 1
-print(message_dechiffre)
-print(data)
-
-#Pour recoder le mesage de base: decaler le message de 26 lettres (26) - le decalage initiale de la lettre
-
+print('\033[92mVoici le message déchiffré: ' + '\033[93m' + message_dechiffre + '\033[0m')

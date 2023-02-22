@@ -87,5 +87,3 @@ for element in message_a_chiffrer:
 
 #Affichage du Message final une fois chiffré et recomposé en ligne
 print('\033[0mVoici le message chiffré: ', '\033[93m', message_chiffre, '\033[0m')
-message_chiffre_export = open('message chiffre.txt', 'w')
-message_chiffre_export = message_chiffre_export.write(message_chiffre)
